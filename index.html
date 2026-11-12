@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QFA Regulation Practice</title>
+  <meta name="description" content="Local practice quiz for the QFA Regulation exam">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f5fbf'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='white' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script>
+    // Apply the remembered theme before first paint (no flash).
+    try { var t = localStorage.getItem('qfa-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="QFA Reg">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <button type="button" class="brand" id="brand-home" aria-label="QFA Regulation Practice — home">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <span class="brand-text"><span class="brand-title">QFA Regulation</span><span class="brand-sub">Practice</span></span>
+      </button>
+      <nav class="header-actions" aria-label="Main">
+        <span id="save-status" class="save-status" role="status" aria-live="polite"></span>
+        <button type="button" class="btn btn-ghost btn-sm" id="nav-mistakes">Mistakes <span class="badge" id="nav-mistakes-count" hidden></span></button>
+        <button type="button" class="btn btn-ghost btn-icon" id="theme-toggle" aria-label="Switch theme"></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="app" tabindex="-1">
+    <div class="state-panel" role="status"><div class="spinner" aria-hidden="true"></div><p>Loading questions…</p></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Unofficial practice questions for personal study. Not affiliated with or endorsed by the Institute of Banking (IOB). Always check the current IOB course text — rules, figures and thresholds change.</p>
+  </footer>
+
+  <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="announcer-assertive" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  <dialog id="dialog" class="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-body">
+    <form method="dialog" class="dialog-inner">
+      <h2 id="dialog-title" class="dialog-title"></h2>
+      <div id="dialog-body" class="dialog-body"></div>
+      <div id="dialog-buttons" class="dialog-buttons"></div>
+    </form>
+  </dialog>
+
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <script src="static-api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
